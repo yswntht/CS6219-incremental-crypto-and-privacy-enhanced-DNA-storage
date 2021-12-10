@@ -1,0 +1,64 @@
+Since the appearance of the preliminary version of this work [4] there has been
+further related research.
+The current paper provides an upper bound on the insecurity of the CBC MAC
+and our analysis highlights the role of collisions. Preneel and van Oorschot [19]
+give a corresponding attack, also exploiting collisions. Some gap remains between
+our result and theirs; closing it is an interesting problem. See Section 4 for more
+information. Another attack is given in [14].
+Several CBC MAC variations have been suggested to get around the problem
+mentioned above that the CBC MAC is only secure when strings are of some one
+fixed length. One nice suggestion is to compute the (basic) CBC MAC using a first
+key, and then encipher that result using a second (independent) key. Petrank and
+Rackoff analyze this construction [18].
+One might ask whether the security of CBCm-F as a MAC could be shown to
+follow from a weaker assumption on F than that it is a PRF. Work of An and
+Bellare [1] shows that it is not enough to assume that F is a MAC; they give an
+example of a secure MAC F for which CBCm-F is not a secure MAC.
+Cipher block chaining is not the only method of constructing a MAC. Amongst
+the many proposed methods we mention XOR-MACs [6], HMAC [5], and
+UMAC [9]. Some of these alternative constructions improve on the CBC MAC in
+terms of speed or security bounds.
+
+in some well-known protocols. But as the authors make clear, the CBC MAC is not
+itself at fault for the indicated protocol failures; rather, it is the manner in which
+the containing protocols incorrectly embed the CBC MAC. The authors go on to
+correct some protocols by having them properly use the CBC MAC.
+The concrete security approach makes more explicit and emphatic some features
+already present in the asymptotic approach typically used in theoretical works.
+With asymptotic analysis security guarantees often take the form of the success
+probability of a polynomially bounded adversary being negligible (everything
+measured as a function of the security parameter). The concrete security can usually
+be derived by examining the proof. However, a lack of focus on getting good con-
+crete security bounds has often led to reductions that are so inefficient that the
+results are of no obvious use to cryptographic practice.
+1.6. Subsequent Work
+Since the appearance of the preliminary version of this work [4] there has been
+further related research.
+The current paper provides an upper bound on the insecurity of the CBC MAC
+and our analysis highlights the role of collisions. Preneel and van Oorschot [19]
+give a corresponding attack, also exploiting collisions. Some gap remains between
+our result and theirs; closing it is an interesting problem. See Section 4 for more
+information. Another attack is given in [14].
+Several CBC MAC variations have been suggested to get around the problem
+mentioned above that the CBC MAC is only secure when strings are of some one
+fixed length. One nice suggestion is to compute the (basic) CBC MAC using a first
+key, and then encipher that result using a second (independent) key. Petrank and
+Rackoff analyze this construction [18].
+One might ask whether the security of CBCm-F as a MAC could be shown to
+follow from a weaker assumption on F than that it is a PRF. Work of An and
+Bellare [1] shows that it is not enough to assume that F is a MAC; they give an
+example of a secure MAC F for which CBCm-F is not a secure MAC.
+Cipher block chaining is not the only method of constructing a MAC. Amongst
+the many proposed methods we mention XOR-MACs [6], HMAC [5], and
+UMAC [9]. Some of these alternative constructions improve on the CBC MAC in
+terms of speed or security bounds.
+1.7. Discussion and Open Questions
+Block ciphers like DES are in fact permutations. One open question is whether
+the permutativity of the block cipher could be exploited to prove a stronger reduc-
+tion than that in our main theorem. The fact that one typically outputs a number
+of bits s<l seems relevant and useful in strengthening the bounds that would
+otherwise be achieved.
+This paper brings out the importance of modeling the fixed input and output
+lengths common to the primitives of contemporary cryptographic practice. When a
+
+family of functions, each from l bits to L bits (for some particular and fixed values.
